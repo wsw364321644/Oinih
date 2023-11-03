@@ -19,7 +19,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(OINIH_STATIC_CRT)
   if(MSVC)
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
   endif()
 endif()
